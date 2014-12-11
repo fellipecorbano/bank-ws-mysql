@@ -23,12 +23,12 @@
     <!-- implementor : Name of the class which implements the service interface -->
     <!-- address : path name relative to the application context. 
          This will resolve into http://localhost:8080/bank-ws/MathModule -->
-    <jaxws:endpoint id="accountService"
+    <jaxws:endpoint id="accountServiceEndpoint"
             		implementor="com.ciandt.impl.AccountImpl"
             		implementorClass="com.ciandt.interfaces.IAccount"
             		address="/AccountService" />
              		
-    <jaxws:endpoint id="transactionService"
+    <jaxws:endpoint id="transactionServiceEndpoint"
             		implementor="com.ciandt.impl.TransactionImpl"
             		implementorClass="com.ciandt.interfaces.ITransaction"
             		address="/TransactionService" />

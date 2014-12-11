@@ -6,6 +6,7 @@ import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import com.ciandt.beans.Account;
 import com.ciandt.dao.DAOMock;
@@ -13,12 +14,9 @@ import com.ciandt.util.JunitSpringTestUtil;
 
 public class AccountImplTest extends JunitSpringTestUtil {
 
+	@Autowired
 	public AccountImpl aImpl;
-	
-	public AccountImplTest(){
-		aImpl = new AccountImpl();
-	}
-	
+		
 	@Test
 	public void testGetAccountByCPF() {
 						

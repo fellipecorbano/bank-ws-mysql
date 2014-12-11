@@ -1,8 +1,11 @@
 package com.ciandt.services;
 
+import org.springframework.stereotype.Service;
+
 import com.ciandt.beans.Account;
 import com.ciandt.dao.DAOMock;
 
+@Service
 public class AccountService {		
 		
 	public Account getAccountByCPF(Long cpf) {		

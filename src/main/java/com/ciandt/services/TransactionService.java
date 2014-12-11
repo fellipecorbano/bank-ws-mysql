@@ -2,9 +2,12 @@ package com.ciandt.services;
 
 import java.util.List;
 
+import org.springframework.stereotype.Service;
+
 import com.ciandt.beans.Transaction;
 import com.ciandt.dao.DAOMock;
 
+@Service
 public class TransactionService {	
 	
 	public boolean addTransaction(long cpf, Transaction transaction) {
