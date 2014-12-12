@@ -12,8 +12,8 @@
   		<junit.version>4.11</junit.version>
 		<log4j.version>1.2.17</log4j.version>
 		<slf4j.version>1.7.7</slf4j.version>
-		<cxf.version>3.0.1</cxf.version>
-		<spring.version>3.2.10.RELEASE</spring.version>
+		<cxf.version>3.0.3</cxf.version>
+		<spring.version>4.1.2.RELEASE</spring.version>
 		<spring-security.version>3.2.0.RELEASE</spring-security.version>
 		<jaxb.version>2.1.14</jaxb.version>
 		<jaxws-tools.version>2.2.6</jaxws-tools.version>
