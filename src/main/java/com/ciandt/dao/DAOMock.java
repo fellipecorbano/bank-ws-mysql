@@ -4,13 +4,30 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import javax.annotation.PostConstruct;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+
 import com.ciandt.beans.Account;
 import com.ciandt.beans.Transaction;
 import com.ciandt.enumeration.transType;
 
+@Repository
 public class DAOMock {
 
 	public static Map<Long, Account> lsAccounts;
+			
+	public static AccountDAO accountDAO;
+	
+	@Autowired
+	AccountDAO accountDAOWired;
+	
+	@PostConstruct
+	public void init(){
+		DAOMock.accountDAO = accountDAOWired;
+	}
+	
 	
 	public static Map<Long, Account> getAccountsMock(){
 		
@@ -25,6 +42,7 @@ public class DAOMock {
 	* Mock Database
 	*********************************************/
 	public static void mockDatabase() {
+		
 		lsAccounts = new HashMap<Long, Account>();		
 		
 		lsAccounts.put(12345678901L, new Account("0001", "0016348", 12345678901L, "Fellipe", 10500));
@@ -47,9 +65,12 @@ public class DAOMock {
 	public static boolean accountExists(long cpf){
 		return lsAccounts.containsKey(cpf);		
 	}
-	
+		
 	public static Account addAccount(Account c){
-		lsAccounts.put(c.getCpf(), c);		
+		lsAccounts.put(c.getCpf(), c);	
+		
+		accountDAO.addAccount(c);
+		
 		return c;		
 	}
 	
